@@ -1,0 +1,150 @@
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    width: 450px; /* Adjust as needed */
+    height: 450px; /* Adjust as needed */
+    border: 2px solid black;
+}
+
+.sudoku-row {
+    display: contents; /* Make child cells span across the grid */
+}
+
+.sudoku-cell {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    font-size: 1.5em;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Add thicker borders for 3x3 blocks */
+.sudoku-cell:nth-child(3n) {
+    border-right: 2px solid black;
+}
+
+.sudoku-cell:nth-child(1) {
+    border-left: 2px solid black;
+}
+
+#sudoku-board > div:nth-child(3n) {
+    border-bottom: 2px solid black;
+}
+
+#sudoku-board > div:nth-child(1) {
+    border-top: 2px solid black;
+}
+
+.sudoku-cell.shaded {
+    background-color: #f0f0f0;
+}
+
+.sudoku-cell.original {
+    font-weight: bold;
+    color: navy;
+}
+
+.sudoku-cell.incorrect {
+    color: red;
+    background-color: #ffe0e0;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    width: 540px; /* Increased size */
+    height: 540px; /* Increased size */
+    border: 3px solid #333; /* Darker and thicker border */
+    margin: 20px auto; /* Center horizontally with top/bottom margin */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.sudoku-row {
+    display: contents;
+}
+
+.sudoku-cell {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd; /* Lighter cell borders */
+    font-size: 2em; /* Increased font size */
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+    color: #555; /* Darker text color */
+}
+
+/* Thicker borders for 3x3 blocks */
+.sudoku-cell:nth-child(3n) {
+    border-right: 3px solid #333;
+}
+
+.sudoku-cell:nth-child(1) {
+    border-left: 3px solid #333;
+}
+
+#sudoku-board > div:nth-child(3n) {
+    border-bottom: 3px solid #333;
+}
+
+#sudoku-board > div:nth-child(1) {
+    border-top: 3px solid #333;
+}
+
+.sudoku-cell.shaded {
+    background-color: #e0f2f7; /* Light blue for shaded cells */
+}
+
+.sudoku-cell.original {
+    font-weight: bolder;
+    color: #1976d2; /* Blue for original numbers */
+}
+
+.sudoku-cell.incorrect {
+    color: #d32f2f; /* Red for incorrect entries */
+    background-color: #ffebee; /* Light red background for incorrect entries */
+}
+
+.controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Center controls horizontally */
+    gap: 15px;
+}
+
+.btn.start-sudoku-btn,
+.btn.solve-sudoku-btn,
+.btn.check-sudoku-btn {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #4caf50; /* Green for start */
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn.solve-sudoku-btn {
+    background-color: #2196f3; /* Blue for solve */
+}
+
+.btn.check-sudoku-btn {
+    background-color: #ff9800; /* Orange for check */
+}
+
+.btn:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}

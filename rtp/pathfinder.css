@@ -1,0 +1,148 @@
+/* pathfinder.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0f0c29; /* Or any attractive background you prefer */
+    background: linear-gradient(135deg, #24243e, #302b63, #0f0c29);
+    color: #eee; /* Light text for dark backgrounds */
+    min-height: 100vh; /* Ensure body takes at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    overflow: auto; /* Enable scrolling if content overflows */
+}
+
+#gameTitle {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffc107; /* Attractive title color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulseTitle 2s infinite alternate;
+}
+
+@keyframes pulseTitle {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px; /* Add some margin around the container */
+    padding: 30px;
+    background-color: rgba(103, 71, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(103, 71, 255, 0.15);
+    animation: fadeIn 0.5s ease-out;
+    max-width: 90%; /* Limit maximum width to avoid stretching too much */
+    max-height: 90vh; /* Limit maximum height */
+    overflow: auto; /* Enable scrolling within the container if needed */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#pathFinderCanvas {
+    border: 6px solid #6b48ff;
+    background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
+    margin-bottom: 25px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    animation: pulseShadow 2s infinite alternate;
+    /* Increased canvas size */
+    width: 400px;
+    height: 400px;
+}
+
+@keyframes pulseShadow {
+    0% { box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1); }
+    100% { box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.15); }
+}
+
+#pathFinderCanvas:hover {
+    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+#pathFinderControls {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+    animation: slideInButtons 0.7s ease-out forwards 0.2s;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+@keyframes slideInButtons {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.pf-button {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff6b6b, #e63946);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 5px 5px 10px rgba(255, 107, 107, 0.3);
+}
+
+.pf-button:hover {
+    background: linear-gradient(135deg, #e63946, #cc0000);
+    transform: translateY(-3px);
+    box-shadow: 7px 7px 12px rgba(255, 107, 107, 0.4);
+}
+
+.pf-button:active {
+    background-color: #cc0000;
+    transform: translateY(1px);
+    box-shadow: 3px 3px 5px rgba(255, 107, 107, 0.3);
+}
+
+#pathFinderMessage {
+    font-size: 22px;
+    color: #ffc107;
+    margin-top: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: pulseColor 1.5s infinite alternate;
+}
+
+@keyframes pulseColor {
+    0% { color: #ffc107; }
+    100% { color: #fdd835; }
+}
+
+@media (max-width: 768px) {
+    #pathFinderControls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .pf-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.confetti {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}

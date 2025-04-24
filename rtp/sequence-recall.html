@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Sequence Recall</title>
+    <link rel="stylesheet" href="sequence-recall.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        /* Basic styles are now in sequence-recall-enhanced.css */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Food Sequence Recall</h1>
+        <p class="description">Watch the sequence and drag the food in the same order!</p>
+
+        <div class="game-area">
+            <div class="sequence-display" id="sequence-display">
+            </div>
+            <div id="draggable-area" class="hidden">
+            </div>
+            <div id="drop-area">
+                <span>Drag food here</span>
+            </div>
+            <div class="controls">
+                <p class="score">Score: <span id="score">0</span></p>
+                <button id="start-button">Start</button>
+                <button id="ok-button" class="hidden">OK</button>
+                <button id="restart-game-button">Restart</button>
+                <button id="exit-game-button">Exit</button>
+                <p class="message" id="message"></p>
+            </div>
+        </div>
+
+        <div class="difficulty-controls">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-back" id="back-btn">Back to Home</button>
+        </div>
+
+        <div id="correct-popup" class="correct-popup hidden">
+            <h2>Correct! 🎉</h2>
+            <button id="next-round-button" class="popup-button">Next Round</button>
+        </div>
+
+        <div id="incorrect-popup" class="incorrect-popup hidden">
+            <h2>Incorrect!</h2>
+            <button id="try-again-button" class="popup-button">Try Again</button>
+            <button id="restart-from-incorrect-button" class="popup-button">Restart</button>
+        </div>
+    </div>
+
+    <script src="sequence-recall.js"></script>
+</body>
+</html>

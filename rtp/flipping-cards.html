@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipping Cards Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flipping-cards.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-screen">
+            <center><h1>FLIPPING CARDS</h1></div></center>
+            <div class="game-info">
+                <h2><div class="moves">Moves: <span id="moves-count">0</span></div></div></h2>
+                <h2><div class="timer">Time: <span id="time">00:00</span></div></h2>
+            </div>
+            <div class="memory-game">
+                </div>
+            <button class="btn restart-btn">Restart Game</button>
+        </div>
+
+        <div class="congrats-screen">
+            <h2 class="congrats-message">Yayy Congrats!</h2>
+            <div class="congrats-emoji">🎉</div>
+            <p><h3>You completed the game in <span id="final-moves"></span> moves and <span id="final-time"></span>sec.</h3></p>
+            <button class="play-again-btn">Play Again</button>
+        </div>
+    </div>
+    <script src="flipping-cards.js"></script>
+</body>
+</html>

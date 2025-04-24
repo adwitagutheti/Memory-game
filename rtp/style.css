@@ -1,0 +1,220 @@
+/* style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f0f8ff; /* Light Alice Blue background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    margin-top: 30px;
+    width: 95%;
+    max-width: 650px;
+    text-align: center;
+}
+
+h1 {
+    color: #2e8b57; /* Sea Green heading */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #007bff; /* Primary Blue button */
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.03);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.play-again-btn {
+    background-color: #28a745; /* Success Green */
+}
+
+.play-again-btn:hover {
+    background-color: #1e7e34;
+}
+
+/* Styles for the games grid layout */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Three columns for the first row */
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center; /* Center the grid horizontally */
+}
+
+/* Style for the second row of games */
+@media (min-width: 769px) { /* Apply only for larger screens */
+    .games-grid {
+        grid-template-rows: auto auto; /* Allow for two rows */
+    }
+    .games-grid > .game-card:nth-child(1),
+    .games-grid > .game-card:nth-child(2),
+    .games-grid > .game-card:nth-child(3) {
+        grid-column: auto; /* Reset column placement for the first row */
+        grid-row: 1;
+    }
+    .games-grid > .game-card:nth-child(4),
+    .games-grid > .game-card:nth-child(5) {
+        grid-column: 2 / span 1; /* Place the two items in the center of the second row */
+        grid-row: 2;
+    }
+}
+
+.game-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.game-banner {
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-icon {
+    transform: translate(-50%, -50%) scale(1.2) rotate(10deg);
+}
+
+.game-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-title {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.game-description {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.difficulty {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.difficulty-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-right: 5px;
+}
+
+.filled {
+    background-color: #ff8a00;
+}
+
+.play-button {
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 15px;
+}
+
+.play-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
+}
+
+.game-card:hover .play-button::before {
+    left: 100%;
+}
+/* Styles for the games grid layout */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Three columns for the first row */
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center; /* Center the grid horizontally */
+}
+
+/* Style for the second row of games */
+@media (min-width: 769px) { /* Apply only for larger screens */
+    .games-grid {
+        grid-template-rows: auto auto; /* Allow for two rows */
+    }
+    .games-grid > .game-card:nth-child(1),
+    .games-grid > .game-card:nth-child(2),
+    .games-grid > .game-card:nth-child(3) {
+        grid-column: auto; /* Reset column placement for the first row */
+        grid-row: 1;
+    }
+    .games-grid > .game-card:nth-child(4),
+    .games-grid > .game-card:nth-child(5) {
+        grid-column: 2 / span 1; /* Place the two items in the center of the second row */
+        grid-row: 2;
+    }
+}

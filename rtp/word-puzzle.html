@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Puzzle Game</title>
+    <link rel="stylesheet" href="word-puzzle.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Word Puzzle</h1>
+        <p class="game-description">Find all the hidden words in the grid.</p>
+
+        <div class="score-display">
+            Words found: <span id="found-count">0</span>/<span id="total-count">0</span>
+        </div>
+
+        <div class="difficulty">
+            <button class="difficulty-btn active" data-level="easy">Easy</button>
+            <button class="difficulty-btn" data-level="medium">Medium</button>
+            <button class="difficulty-btn" data-level="hard">Hard</button>
+        </div>
+
+        <div class="game-area">
+            <div class="word-list" id="word-list"></div>
+            <div class="puzzle-grid" id="puzzle-grid"></div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-back" id="back-btn">Back to Home</button>
+            <button class="btn btn-reset" id="reset-btn">Reset</button>
+            <button class="btn btn-new" id="new-game-btn">New Puzzle</button>
+        </div>
+    </div>
+
+    <script src="word-puzzle.js"></script>
+</body>
+</html>

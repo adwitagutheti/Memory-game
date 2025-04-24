@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 600% 600%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.game-description {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.word-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.word-item {
+    background: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.word-item.found {
+    background: #4caf50;
+    color: white;
+    text-decoration: line-through;
+}
+
+.puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    margin: 0 auto;
+    user-select: none;
+}
+
+.puzzle-cell {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.puzzle-cell:hover {
+    background: #e3f2fd;
+}
+
+.puzzle-cell.selected {
+    background: #bbdefb;
+}
+
+.puzzle-cell.highlighted {
+    background: #4caf50;
+    color: white;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-reset {
+    background: #ff5722;
+    color: white;
+}
+
+.btn-reset:hover {
+    background: #e64a19;
+}
+
+.btn-new {
+    background: #2196f3;
+    color: white;
+}
+
+.btn-new:hover {
+    background: #1976d2;
+}
+
+.btn-back {
+    background: #333;
+    color: white;
+}
+
+.btn-back:hover {
+    background: #555;
+}
+
+.difficulty {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.difficulty-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #f0f0f0;
+    transition: all 0.3s;
+}
+
+.difficulty-btn.active {
+    background: #2196f3;
+    color: white;
+}
+
+.score-display {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+    .puzzle-cell {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+}
